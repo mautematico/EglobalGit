@@ -1,5 +1,6 @@
 #include <Operaciones.h>
 #include <stdio.h>
+#include <string.h>
 #include <iostream>
 using namespace std;
 
@@ -13,27 +14,38 @@ float Operaciones::media(int * listaEnteros, int tam){
 	media = media/tam;
 	return media;
 }
-char * Operaciones::toMayusculas(char * cadena){
-	for(;*cadena!='\0';cadena++){
-        if((int)*cadena>=61 && (int)*cadena<=122){
-        	*cadena = *cadena-20;
-        }
-	}
-	return cadena;
-}
-int * Operaciones::maxMin(int * listaEnteros, int tam){
-	int *maxMin[2];
-	*maxMin[0]=listaEnteros[0];
-	*maxMin[1]=listaEnteros[0];
+int Operaciones::productoPunto(int * m1, int * m2, int tam){
+	int escalar=0;
 	for(int i=0; i<tam; i++){
-		if(listaEnteros[i] >= *maxMin[0]){
-			*maxMin[0]=listaEnteros[i];
+		escalar += (m1[i])*(m2[i]);
+	}
+	return escalar;
+}
+int * Operaciones::maxMin(int * listaEnteros, int tam, int * maxMin){
+	maxMin[0]=listaEnteros[0];
+	maxMin[1]=listaEnteros[0];
+	for(int i=0; i<tam; i++){
+		if(listaEnteros[i] >= maxMin[0]){
+			maxMin[0]=listaEnteros[i];
 		}
-		if(listaEnteros[i] <= *maxMin[0]){
-			*maxMin[1]=listaEnteros[i];
+		if(listaEnteros[i] < maxMin[1]){
+			maxMin[1]=listaEnteros[i];
 		}
 	}
-	return * maxMin;
+	return maxMin;
+}
+
+char * Operaciones::toMayusculas(char * cadena, char * salida){
+	char aux;
+	for(int i=0; cadena[i]!='\0'; i++){
+        if((int) cadena[i] >=97 && (int) cadena[i] <=122){
+        	aux = (char) ((int) cadena[i]-32);
+        }else{
+        	aux = cadena[i];
+        }
+        salida[i] = aux;
+	}
+	return salida;
 }
 int * Operaciones::getSubLista(int * listaEnteros, int tam, int i, int f){
 	int SubLista[f-i];
@@ -47,11 +59,4 @@ int * Operaciones::getSubLista(int * listaEnteros, int tam, int i, int f){
 	}else{
 		return NULL;
 	}
-}
-int Operaciones::productoPunto(int * m1, int * m2, int tam){
-	int escalar=0;
-	for(int i=0; i<tam; i++){
-		escalar += (m1[i])*(m2[i]);
-	}
-	return escalar;
 }

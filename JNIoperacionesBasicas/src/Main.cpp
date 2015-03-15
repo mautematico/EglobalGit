@@ -3,32 +3,28 @@
 
 using namespace std;
 int main(){
-	int M1[] = {1, 2, 3, 4};
-	int M2[] = {1, 2, 3, 4}; 
-	int *maxMin;
+	int M1[] = {2,2,3,4,6,1};
+	int M2[] = {0,0,0,1,1,1};
 	int *SubLista;
-	char * cadena = "ErickAguilar";
+	int *maxMin[2];
+	int *M;
+	char * cadena="ErickEduardo";
+	char * salida[12];
+	char * S;
 
 	Operaciones *ops = new Operaciones();
-	cout<<"Media: "<<ops->media(M1, 4)<<endl;
-	cout<<"Producto Punto: "<<ops->productoPunto(M1, M2, 4)<<endl;
+
+	int tam = sizeof(M1)/sizeof(M1[0]);
+	cout<<"Longitud: "<<tam<<endl;
+
+	cout<<"Media: "<<ops->media(M1, tam)<<endl;
+	cout<<"Producto Punto: "<<ops->productoPunto(M1, M2, tam)<<endl;
 	
-	SubLista = ops->getSubLista((int *) M1,4,1,3);
+	M = ops->maxMin((int *) M1, tam, (int *) maxMin);
+	cout<<"Maximo: "<< M[0] <<endl;
+	cout<<"Minimo: "<< M[1] <<endl;
 
-	cadena = ops->toMayusculas(cadena);
-		maxMin = ops->maxMin(M1,4);
-	cout<<"Maximo: "<<maxMin<<endl;
-	maxMin++;
-	cout<<"Minimo: "<<maxMin<<endl;
-
-	for(int i = 0; i < 2; i++) {
-	    cout << SubLista << endl;
-	    SubLista++;
-	}
-	for(;*cadena!='\0';cadena++){
-		cout<<cadena<<endl;
-	}
-
-
-	
+	cout<< "Cadena: " << cadena <<endl;
+	S = ops->toMayusculas((char *) cadena, (char *) salida);
+    cout<< "Cadena en mayusculas: " << (char *) S <<endl;
 }
