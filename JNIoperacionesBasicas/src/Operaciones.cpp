@@ -47,8 +47,7 @@ char * Operaciones::toMayusculas(char * cadena, char * salida){
 	}
 	return salida;
 }
-int * Operaciones::getSubLista(int * listaEnteros, int tam, int i, int f){
-	int SubLista[f-i];
+int * Operaciones::getSubLista(int * listaEnteros, int * SubLista, int tam, int i, int f){
 	int k=0;
 	if(i>=0 && f<tam){
 		for(int j=i; j<f; j++){
