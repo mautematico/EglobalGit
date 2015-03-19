@@ -31,10 +31,10 @@ int main(){
     int *SubListaPtr;
     
     SubListaPtr = ops->getSubLista((int *) M1, (int *) SubLista, tam, inicio, final);
-    cout<<"Sublista: ";
+    cout<<"Sublista: (";
     for(int j=0; j<final-inicio; j++){
 		cout<<SubListaPtr[j]<<" ";
 	}
-	cout<<"\n "<<endl;
+	cout<<") \n "<<endl;
 
 }

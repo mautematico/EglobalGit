@@ -9,8 +9,8 @@ clean:
 	rm -r *.class
 so:
 	g++ -fPIC -O2 -c src/Operaciones.cpp -g -Iinclude
-	g++ -fPIC -O2 -c src/OperacionesWrapper.cpp -g -Iinclude -I/usr/lib/jvm/jdk1.7.0_60/include/ -I/usr/lib/jvm/jdk1.7.0_60/include/linux
-	g++ -shared *.o -o lib/libOperaciones.so
+	g++ -fPIC -O2 -c src/JniOperacionesWrapper.cpp -g -Iinclude -I/usr/lib/jvm/jdk1.7.0_60/include/ -I/usr/lib/jvm/jdk1.7.0_60/include/linux
+	g++ -shared *.o -o lib/libJniOperaciones.so
 classes:
 	javac com/mx/eglobal/JniOperacionesWrapper.java
-	javac main.java
+	javac Main.java
