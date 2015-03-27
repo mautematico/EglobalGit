@@ -1,0 +1,34 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ 
+    <!-- Constructor Injection -->
+    <bean id="calculadoraCI_1Bean" class="com.mx.eglobal.Calculadora" />
+    
+    <bean id="calculadoraCI_2Bean" class="com.mx.eglobal.Calculadora" >
+        <constructor-arg value="20" />
+        <constructor-arg value="22" />
+    </bean>
+    
+    
+    <!-- Setter Injection  -->
+    <bean id="calculadoraSE_1Bean" class="com.mx.eglobal.Calculadora">
+        <property name="valA" value="30" />
+    </bean>
+    <bean id="calculadoraSE_2Bean" class="com.mx.eglobal.Calculadora">
+        <property name="valA" value="30" />
+        <property name="valB" value="31" />
+    </bean>
+    
+    <!-- Setter Injection  -->
+    <bean id="evaluatorBean" class="com.mx.eglobal.Evaluator"/>
+    <bean id="calculadoraSE_3Bean" class="com.mx.eglobal.Calculadora">
+        <property name="valA" value="30" />
+        <property name="valB" value="31" />
+        <property name="evalData" ref="evaluatorBean" />
+    </bean>
+
+
+
+</beans>
