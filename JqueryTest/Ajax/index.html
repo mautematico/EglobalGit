@@ -1,0 +1,47 @@
+<html>
+    <head>
+
+        <link rel="stylesheet" href="jquery.dataTables.css" />
+        <script src="jquery-1.11.1.min.js"></script>
+        <script src="jquery.dataTables.min.js"></script>
+        
+        <script>
+            $(document).ready(
+            function() {
+                $('#example').dataTable( {
+                    "ajax": './datos.txt'
+                } );
+            } 
+            );
+
+        </script>
+
+    </head>
+
+    <body>
+        <table id="example" class="display" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Extn.</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+         
+                <tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Extn.</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
+                    </tr>
+                </tfoot>
+        </table>
+    </body>
+
+</html>
