@@ -6,8 +6,9 @@ class Escuela implements Serializable {
 	String direccion
 	String nombre
 	Integer tipo
+	String id
 
-
+	    static hasMany = [alumnos: Alumnos]
 
     static constraints = {
     }
@@ -18,12 +19,10 @@ class Escuela implements Serializable {
     	    table "escuelas"
         		 version false
 	            nombre column: "nombre"
-//	            clave column: "clave"
 	            direccion column: "direccion"
 	            codigopostal column: "codigopostal"
 	            tipo column: "tipo"
-
-			    id generator: 'assigned', name: "clave", type: 'String'
+	            id column:"id"
         }
 
 }

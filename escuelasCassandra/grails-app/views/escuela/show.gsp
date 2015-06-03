@@ -23,11 +23,13 @@
 			</g:if>
 			<ol class="property-list escuela">
 			
-				<g:if test="${escuelaInstance?.clave}">
+				<g:if test="${escuelaInstance?.alumnos}">
 				<li class="fieldcontain">
-					<span id="clave-label" class="property-label"><g:message code="escuela.clave.label" default="Clave" /></span>
+					<span id="alumnos-label" class="property-label"><g:message code="escuela.alumnos.label" default="Alumnos" /></span>
 					
-						<span class="property-value" aria-labelledby="clave-label"><g:fieldValue bean="${escuelaInstance}" field="clave"/></span>
+						<g:each in="${escuelaInstance.alumnos}" var="a">
+						<span class="property-value" aria-labelledby="alumnos-label"><g:link controller="alumnos" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link></span>
+						</g:each>
 					
 				</li>
 				</g:if>

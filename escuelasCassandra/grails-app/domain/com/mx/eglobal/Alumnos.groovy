@@ -1,21 +1,24 @@
 package com.mx.eglobal
 
 class Alumnos {
-	int matricula;
+//	Integer id;
 	String nombre;
 	String apellido;
 	String escuela;
 	String grupo;
+	Integer matricula
+
 
     static constraints = {
     }
     static mapping = {
     	    table "alumnos"
         		 version false
-	            matricula column: "matricula"
+//	            id column: "id"
 	            nombre column: "nombre"
 	            apellido column: "apellido"
 	            escuela column: "escuela"
 	            grupo column: "grupo"
+	            matricula column: "id"
         }
 }

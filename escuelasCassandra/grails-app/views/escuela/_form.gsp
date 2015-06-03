@@ -2,12 +2,12 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: escuelaInstance, field: 'clave', 'error')} ">
-	<label for="clave">
-		<g:message code="escuela.clave.label" default="Clave" />
+<div class="fieldcontain ${hasErrors(bean: escuelaInstance, field: 'alumnos', 'error')} ">
+	<label for="alumnos">
+		<g:message code="escuela.alumnos.label" default="Alumnos" />
 		
 	</label>
-	
+	<g:select name="alumnos" from="${com.mx.eglobal.Alumnos.list()}" multiple="multiple" optionKey="id" size="5" required="" value="${escuelaInstance?.alumnos*.id}" class="many-to-many"/>
 
 </div>
 
