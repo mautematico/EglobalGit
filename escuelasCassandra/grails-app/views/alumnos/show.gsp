@@ -50,15 +50,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${alumnosInstance?.matricula}">
-				<li class="fieldcontain">
-					<span id="matricula-label" class="property-label"><g:message code="alumnos.matricula.label" default="Matricula" /></span>
-					
-						<span class="property-value" aria-labelledby="matricula-label"><g:fieldValue bean="${alumnosInstance}" field="matricula"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${alumnosInstance?.nombre}">
 				<li class="fieldcontain">
 					<span id="nombre-label" class="property-label"><g:message code="alumnos.nombre.label" default="Nombre" /></span>

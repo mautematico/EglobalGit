@@ -30,8 +30,6 @@
 					
 						<g:sortableColumn property="grupo" title="${message(code: 'alumnos.grupo.label', default: 'Grupo')}" />
 					
-						<g:sortableColumn property="matricula" title="${message(code: 'alumnos.matricula.label', default: 'Matricula')}" />
-					
 						<g:sortableColumn property="nombre" title="${message(code: 'alumnos.nombre.label', default: 'Nombre')}" />
 					
 					</tr>
@@ -45,8 +43,6 @@
 						<td>${fieldValue(bean: alumnosInstance, field: "escuela")}</td>
 					
 						<td>${fieldValue(bean: alumnosInstance, field: "grupo")}</td>
-					
-						<td>${fieldValue(bean: alumnosInstance, field: "matricula")}</td>
 					
 						<td>${fieldValue(bean: alumnosInstance, field: "nombre")}</td>
 					

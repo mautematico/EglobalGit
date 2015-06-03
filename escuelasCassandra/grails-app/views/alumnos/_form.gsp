@@ -29,15 +29,6 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: alumnosInstance, field: 'matricula', 'error')} ">
-	<label for="matricula">
-		<g:message code="alumnos.matricula.label" default="Matricula" />
-		
-	</label>
-	<g:field type="number" name="matricula" value="${alumnosInstance.matricula}" />
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: alumnosInstance, field: 'nombre', 'error')} ">
 	<label for="nombre">
 		<g:message code="alumnos.nombre.label" default="Nombre" />
