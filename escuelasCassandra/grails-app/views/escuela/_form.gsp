@@ -7,7 +7,7 @@
 		<g:message code="escuela.clave.label" default="Clave" />
 		
 	</label>
-	<g:textField name="clave" value="${escuelaInstance?.clave}" />
+	
 
 </div>
 

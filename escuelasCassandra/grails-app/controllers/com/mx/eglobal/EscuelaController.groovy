@@ -4,6 +4,7 @@ package com.mx.eglobal
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import grails.converters.JSON;
 
 @Transactional(readOnly = true)
 class EscuelaController {
@@ -11,8 +12,11 @@ class EscuelaController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Escuela.list(params), model:[escuelaInstanceCount: Escuela.count()]
+        render Escuela.list() as JSON
+
+
+//        params.max = Math.min(max ?: 10, 100)
+  //      respond Escuela.list(params), model:[escuelaInstanceCount: Escuela.count()]
     }
 
     def show(Escuela escuelaInstance) {
