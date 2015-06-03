@@ -24,11 +24,27 @@
 			<thead>
 					<tr>
 					
+						<g:sortableColumn property="apemat" title="${message(code: 'profesores.apemat.label', default: 'Apemat')}" />
+					
+						<g:sortableColumn property="apepat" title="${message(code: 'profesores.apepat.label', default: 'Apepat')}" />
+					
+						<g:sortableColumn property="empleado" title="${message(code: 'profesores.empleado.label', default: 'Empleado')}" />
+					
+						<g:sortableColumn property="nombre" title="${message(code: 'profesores.nombre.label', default: 'Nombre')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${profesoresInstanceList}" status="i" var="profesoresInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					
+						<td><g:link action="show" id="${profesoresInstance.id}">${fieldValue(bean: profesoresInstance, field: "apemat")}</g:link></td>
+					
+						<td>${fieldValue(bean: profesoresInstance, field: "apepat")}</td>
+					
+						<td>${fieldValue(bean: profesoresInstance, field: "empleado")}</td>
+					
+						<td>${fieldValue(bean: profesoresInstance, field: "nombre")}</td>
 					
 					</tr>
 				</g:each>

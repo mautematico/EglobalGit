@@ -23,6 +23,42 @@
 			</g:if>
 			<ol class="property-list profesores">
 			
+				<g:if test="${profesoresInstance?.apemat}">
+				<li class="fieldcontain">
+					<span id="apemat-label" class="property-label"><g:message code="profesores.apemat.label" default="Apemat" /></span>
+					
+						<span class="property-value" aria-labelledby="apemat-label"><g:fieldValue bean="${profesoresInstance}" field="apemat"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${profesoresInstance?.apepat}">
+				<li class="fieldcontain">
+					<span id="apepat-label" class="property-label"><g:message code="profesores.apepat.label" default="Apepat" /></span>
+					
+						<span class="property-value" aria-labelledby="apepat-label"><g:fieldValue bean="${profesoresInstance}" field="apepat"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${profesoresInstance?.empleado}">
+				<li class="fieldcontain">
+					<span id="empleado-label" class="property-label"><g:message code="profesores.empleado.label" default="Empleado" /></span>
+					
+						<span class="property-value" aria-labelledby="empleado-label"><g:fieldValue bean="${profesoresInstance}" field="empleado"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${profesoresInstance?.nombre}">
+				<li class="fieldcontain">
+					<span id="nombre-label" class="property-label"><g:message code="profesores.nombre.label" default="Nombre" /></span>
+					
+						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${profesoresInstance}" field="nombre"/></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form url="[resource:profesoresInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
