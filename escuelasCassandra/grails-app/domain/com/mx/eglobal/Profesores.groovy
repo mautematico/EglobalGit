@@ -1,11 +1,10 @@
 package com.mx.eglobal
 
 class Profesores {
-	Integer id;
+	String id;
 	String nombre;
 	String apepat;
 	String apemat;
-	Integer empleado
 
     static constraints = {
     }
@@ -16,6 +15,6 @@ class Profesores {
 	            nombre column: "nombre"
 	            apepat column: "apepat"
 	            apemat column: "apemat"
-	            empleado column: "id"
+	            
         }
 }

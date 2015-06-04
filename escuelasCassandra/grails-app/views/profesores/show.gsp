@@ -41,15 +41,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${profesoresInstance?.empleado}">
-				<li class="fieldcontain">
-					<span id="empleado-label" class="property-label"><g:message code="profesores.empleado.label" default="Empleado" /></span>
-					
-						<span class="property-value" aria-labelledby="empleado-label"><g:fieldValue bean="${profesoresInstance}" field="empleado"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${profesoresInstance?.nombre}">
 				<li class="fieldcontain">
 					<span id="nombre-label" class="property-label"><g:message code="profesores.nombre.label" default="Nombre" /></span>

@@ -28,8 +28,6 @@
 					
 						<g:sortableColumn property="apepat" title="${message(code: 'profesores.apepat.label', default: 'Apepat')}" />
 					
-						<g:sortableColumn property="empleado" title="${message(code: 'profesores.empleado.label', default: 'Empleado')}" />
-					
 						<g:sortableColumn property="nombre" title="${message(code: 'profesores.nombre.label', default: 'Nombre')}" />
 					
 					</tr>
@@ -41,8 +39,6 @@
 						<td><g:link action="show" id="${profesoresInstance.id}">${fieldValue(bean: profesoresInstance, field: "apemat")}</g:link></td>
 					
 						<td>${fieldValue(bean: profesoresInstance, field: "apepat")}</td>
-					
-						<td>${fieldValue(bean: profesoresInstance, field: "empleado")}</td>
 					
 						<td>${fieldValue(bean: profesoresInstance, field: "nombre")}</td>
 					
