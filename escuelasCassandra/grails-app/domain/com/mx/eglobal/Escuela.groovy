@@ -5,7 +5,7 @@ class Escuela implements Serializable {
 	String codigopostal
 	String direccion
 	String nombre
-	List <int>idalumnos;
+	List idalumnos;
 	Integer tipo
 	String id
 
