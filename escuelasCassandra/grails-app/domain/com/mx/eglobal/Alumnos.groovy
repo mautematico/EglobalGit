@@ -1,7 +1,7 @@
 package com.mx.eglobal
 
 class Alumnos {
-	Integer id;
+	String id;
 	String nombre;
 	String apellido;
 	String escuela;
