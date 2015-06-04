@@ -29,6 +29,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: escuelaInstance, field: 'idalumnos', 'error')} ">
+	<label for="idalumnos">
+		<g:message code="escuela.idalumnos.label" default="Idalumnos" />
+		
+	</label>
+	
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: escuelaInstance, field: 'nombre', 'error')} ">
 	<label for="nombre">
 		<g:message code="escuela.nombre.label" default="Nombre" />
