@@ -4,6 +4,7 @@ package com.mx.eglobal
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import com.mx.eglobal.*
 
 @Transactional(readOnly = true)
 class EscuelaController {
@@ -16,7 +17,9 @@ class EscuelaController {
     }
 
     def show(Escuela escuelaInstance) {
-        respond escuelaInstance
+
+        def alumnos = Alumnos.findAllByIdInList(escuelaInstance.idalumnos)
+        [escuelaInstance:escuelaInstance, alumnos:alumnos]
     }
 
     def create() {

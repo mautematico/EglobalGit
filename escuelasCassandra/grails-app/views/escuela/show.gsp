@@ -23,17 +23,6 @@
 			</g:if>
 			<ol class="property-list escuela">
 			
-				<g:if test="${escuelaInstance?.alumnos}">
-				<li class="fieldcontain">
-					<span id="alumnos-label" class="property-label"><g:message code="escuela.alumnos.label" default="Alumnos" /></span>
-					
-						<g:each in="${escuelaInstance.alumnos}" var="a">
-						<span class="property-value" aria-labelledby="alumnos-label"><g:link controller="alumnos" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${escuelaInstance?.codigopostal}">
 				<li class="fieldcontain">
 					<span id="codigopostal-label" class="property-label"><g:message code="escuela.codigopostal.label" default="Codigopostal" /></span>
@@ -55,8 +44,13 @@
 				<g:if test="${escuelaInstance?.idalumnos}">
 				<li class="fieldcontain">
 					<span id="idalumnos-label" class="property-label"><g:message code="escuela.idalumnos.label" default="Idalumnos" /></span>
-					
-						<span class="property-value" aria-labelledby="idalumnos-label"><g:fieldValue bean="${escuelaInstance}" field="idalumnos"/></span>
+								<ul>
+						        <g:each in="${alumnos}" var="alumno">
+						            <li>${alumno.nombre}</li>
+						        </g:each>
+						        </ul>
+
+
 					
 				</li>
 				</g:if>

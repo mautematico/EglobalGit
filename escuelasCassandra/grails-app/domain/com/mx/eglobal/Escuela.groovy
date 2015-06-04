@@ -1,16 +1,16 @@
 package com.mx.eglobal
 import java.io.Serializable;
+import com.mx.eglobal.*;
 
 class Escuela implements Serializable {
 	String codigopostal
 	String direccion
 	String nombre
-	List <Integer>idalumnos;
+	List <String> idalumnos = [];
 	Integer tipo
 	String id
 
-	static hasMany = [alumnos: Alumnos]
-
+	static hasMany = [idalumnos:String]
     static constraints = {
     }
 
@@ -22,8 +22,12 @@ class Escuela implements Serializable {
 	            codigopostal column: "codigopostal"
 	            tipo column: "tipo"
 	            id column:"id"
-	            idalumnos column: "alumnos"
+	            idalumnos column: 'alumnos'
         }
-
+    Boolean agregarAlumno(Alumnos alumnoNuevo){
+    	if(idalumnos==null)
+    		idalumnos = new ArrayList();
+    	idalumnos.push(alumnoNuevo.id);
+    	this.save();
+    }
 }
-
