@@ -18,4 +18,8 @@ class Alumnos {
 	            escuela column: "escuela"
 	            grupo column: "grupo"
         }
+
+    String toString(){
+    	return "$apellido,$nombre";
+    }
 }

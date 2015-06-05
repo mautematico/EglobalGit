@@ -17,4 +17,7 @@ class Profesores {
 	            apemat column: "apemat"
 	            
         }
+    String toString(){
+    	return "$apepat, $nombre";
+    }
 }
