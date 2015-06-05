@@ -1,0 +1,25 @@
+CREATE TABLE profesores (
+  id text,
+  apemat text,
+  apepat text,
+  nombre text,
+  PRIMARY KEY (id)
+);
+CREATE TABLE alumnos (
+  id text,
+  apellido text,
+  escuela text,
+  grupo text,
+  nombre text,
+  PRIMARY KEY (id)
+);
+CREATE TABLE escuelas (
+  id text,
+  alumnos list<text>,
+  codigopostal text,
+  direccion text,
+  nombre text,
+  profesores list<text>,
+  tipo int,
+  PRIMARY KEY (id)
+);
