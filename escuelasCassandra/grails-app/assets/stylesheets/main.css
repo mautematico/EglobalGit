@@ -82,6 +82,12 @@ h1 {
 ul {
 	padding: 0;
 }
+.lista{
+	padding: 0;
+  	clear: both;
+  	width: 300px;
+  	margin: auto;
+}
 
 img {
 	border: 0;
