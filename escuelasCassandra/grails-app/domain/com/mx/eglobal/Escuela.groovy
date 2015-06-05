@@ -9,8 +9,10 @@ class Escuela implements Serializable {
 	List <String> idalumnos = [];
 	Integer tipo
 	String id
+	List <String> idprofesores = [];
 
-	static hasMany = [idalumnos:String]
+	static hasMany = [idalumnos:String, idprofesores:String]
+
     static constraints = {
     }
 
@@ -23,11 +25,18 @@ class Escuela implements Serializable {
 	            tipo column: "tipo"
 	            id column:"id"
 	            idalumnos column: 'alumnos'
+	            idprofesores column: 'profesores'
         }
     Boolean agregarAlumno(Alumnos alumnoNuevo){
     	if(idalumnos==null)
     		idalumnos = new ArrayList();
     	idalumnos.push(alumnoNuevo.id);
+    	this.save();
+    }
+    Boolean agregarProfesor(Profesores profesorNuevo){
+    	if(idprofesores==null)
+    		idprofesores = new ArrayList();
+    	idprofesores.push(profesorNuevo.id);
     	this.save();
     }
 }

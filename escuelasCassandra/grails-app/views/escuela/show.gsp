@@ -54,6 +54,17 @@
 					
 				</li>
 				</g:if>
+
+				<g:if test="${escuelaInstance?.idprofesores}">
+				<li class="fieldcontain">
+					<span id="idprofesores-label" class="property-label"><g:message code="escuela.idprofesores.label" default="Idprofesores" /></span>
+								<ul>
+						        <g:each in="${profesores}" var="profesor">
+						            <li>${profesor.nombre}</li>
+						        </g:each>
+						        </ul>
+				</li>
+				</g:if>
 			
 				<g:if test="${escuelaInstance?.nombre}">
 				<li class="fieldcontain">

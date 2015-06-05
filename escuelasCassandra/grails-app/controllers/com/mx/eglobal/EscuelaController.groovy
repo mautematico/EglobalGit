@@ -20,7 +20,12 @@ class EscuelaController {
         if(escuelaInstance.idalumnos==null)
             escuelaInstance.idalumnos = new ArrayList();
         def alumnos = Alumnos.findAllByIdInList(escuelaInstance.idalumnos)
-        [escuelaInstance:escuelaInstance, alumnos:alumnos]
+        
+        if(escuelaInstance.idprofesores==null)
+            escuelaInstance.idprofesores = new ArrayList();
+        def profesores = Profesores.findAllByIdInList(escuelaInstance.idprofesores)
+        [escuelaInstance:escuelaInstance, alumnos:alumnos, profesores:profesores]
+
     }
 
     def create() {
