@@ -31,6 +31,15 @@
 </div>
 
 
+<div class="fieldcontain ${hasErrors(bean: escuelasInstance, field: 'idprofesores', 'error')} ">
+	<label for="idprofesores">
+		<g:message code="escuelas.idprofesores.label" default="Profesores" />
+		
+	</label>
+	<g:select name="idprofesores" from="${com.mx.eglobal.Profesores.list()}" multiple="multiple" optionKey="id" size="5" value="${escuelasInstance?.idprofesores*.id}" class="many-to-many"/>
+
+</div>
+
 
 
 <div class="fieldcontain ${hasErrors(bean: escuelaInstance, field: 'nombre', 'error')} ">
