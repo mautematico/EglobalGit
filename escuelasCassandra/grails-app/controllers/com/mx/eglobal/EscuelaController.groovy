@@ -17,9 +17,9 @@ class EscuelaController {
     }
 
     def show(Escuela escuelaInstance) {
-
-        def alumnos = Alumnos.findAllByIdInList(escuelaInstance.idalumnos)
-        [escuelaInstance:escuelaInstance, alumnos:alumnos]
+         respond escuelaInstance
+        //def alumnos = Alumnos.findAllByIdInList(escuelaInstance.idalumnos)
+        //[escuelaInstance:escuelaInstance, alumnos:alumnos]
     }
 
     def create() {
