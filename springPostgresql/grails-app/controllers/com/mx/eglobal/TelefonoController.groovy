@@ -2,9 +2,11 @@ package com.mx.eglobal
 
 
 
+import grails.plugin.springsecurity.annotation.Secured
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
+@Secured(['ROLE_ADMIN'])
 @Transactional(readOnly = true)
 class TelefonoController {
 
@@ -19,6 +21,7 @@ class TelefonoController {
         respond telefonoInstance
     }
 
+    @Secured(['ROLE_ADMIN'])
     def create() {
         respond new Telefono(params)
     }
