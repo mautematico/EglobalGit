@@ -10,11 +10,39 @@ class AlumnosController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond Alumnos.list(params), model:[alumnosInstanceCount: Alumnos.count()]
-    }
+    def index(int max, int offset) {
 
+        println params
+        params.max = Math.min(max ?: 15, 100)
+        println offset
+        //respond Alumnos.list(params), model:[alumnosInstanceCount: Alumnos.count()]
+        //respond[Alumnos.list(params), Alumnos.count()] 
+        offset = (offset && offset>0) ?: 0
+        List alumnos = Alumnos.list() //Loads the complete list
+           int total = alumnos.size()
+            int upperLimit = findUpperIndex(offset, max, total)
+            List filteredNames = alumnos.getAt(offset..upperLimit)
+            //return filteredNames
+            respond filteredNames
+    }
+    /*public List getFilteredList(int max, int offset) {
+        //max = Math.min(max ?: 25, 100)
+        offset = (offset && offset>0) ?: 0
+
+        List names = getNames() //Loads the complete list
+        int total = names.size()
+        int upperLimit = findUpperIndex(offset, max, total)
+        List filteredNames = names.getAt(offset..upperLimit)
+        return filteredNames
+      }*/
+
+    public static int findUpperIndex(int offset, int max, int total) {
+        max = offset + max - 1
+        if (max >= total) {
+          max -= max - total + 1
+        }
+        return max
+      }
     def show(Alumnos alumnosInstance) {
         respond alumnosInstance
     }
