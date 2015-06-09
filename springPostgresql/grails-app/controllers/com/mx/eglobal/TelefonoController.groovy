@@ -21,7 +21,7 @@ class TelefonoController {
         respond telefonoInstance
     }
 
-    @Secured(['ROLE_ADMIN'])
+    @Secured(['ROLE_SUPERADMIN'])
     def create() {
         respond new Telefono(params)
     }
