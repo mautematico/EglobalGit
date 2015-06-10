@@ -23,6 +23,24 @@
 			</g:if>
 			<ol class="property-list alumno">
 			
+				<g:if test="${alumnoInstance?.edad}">
+				<li class="fieldcontain">
+					<span id="edad-label" class="property-label"><g:message code="alumno.edad.label" default="Edad" /></span>
+					
+						<span class="property-value" aria-labelledby="edad-label"><g:fieldValue bean="${alumnoInstance}" field="edad"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${alumnoInstance?.nombre}">
+				<li class="fieldcontain">
+					<span id="nombre-label" class="property-label"><g:message code="alumno.nombre.label" default="Nombre" /></span>
+					
+						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${alumnoInstance}" field="nombre"/></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form url="[resource:alumnoInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">

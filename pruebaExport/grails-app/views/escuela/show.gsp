@@ -34,6 +34,24 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${escuelaInstance?.codigo}">
+				<li class="fieldcontain">
+					<span id="codigo-label" class="property-label"><g:message code="escuela.codigo.label" default="Codigo" /></span>
+					
+						<span class="property-value" aria-labelledby="codigo-label"><g:fieldValue bean="${escuelaInstance}" field="codigo"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${escuelaInstance?.nombre}">
+				<li class="fieldcontain">
+					<span id="nombre-label" class="property-label"><g:message code="escuela.nombre.label" default="Nombre" /></span>
+					
+						<span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${escuelaInstance}" field="nombre"/></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form url="[resource:escuelaInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">
