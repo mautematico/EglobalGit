@@ -6,6 +6,7 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'alumno.label', default: 'Alumno')}" />
 		<title><g:message code="default.list.label" args="[entityName]" /></title>
+		<r:require module="export"/>
 	</head>
 	<body>
 		<a href="#list-alumno" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -24,11 +25,19 @@
 			<thead>
 					<tr>
 					
+						<g:sortableColumn property="edad" title="${message(code: 'alumno.edad.label', default: 'Edad')}" />
+					
+						<g:sortableColumn property="nombre" title="${message(code: 'alumno.nombre.label', default: 'Nombre')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${alumnoInstanceList}" status="i" var="alumnoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+					
+						<td><g:link action="show" id="${alumnoInstance.id}">${fieldValue(bean: alumnoInstance, field: "edad")}</g:link></td>
+					
+						<td>${fieldValue(bean: alumnoInstance, field: "nombre")}</td>
 					
 					</tr>
 				</g:each>
@@ -37,6 +46,8 @@
 			<div class="pagination">
 				<g:paginate total="${alumnoInstanceCount ?: 0}" />
 			</div>
+			<export:formats formats="['csv', 'excel', 'ods', 'pdf', 'rtf', 'xml']" />
+
 		</div>
 	</body>
 </html>
